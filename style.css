@@ -1,1 +1,130 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
+:root {
+  --bg: #f7f3ee;
+  --text: #2b2b2b;
+  --accent: #8a7a63;
+  --muted: #8a8a8a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.invitation {
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
+}
+
+.pre-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+
+.names {
+  font-size: 64px;
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  margin-bottom: 28px;
+}
+
+.names span { display: block; }
+
+.names .amp {
+  font-style: italic;
+  font-size: 42px;
+  color: var(--accent);
+  margin: 8px 0;
+}
+
+.date-line {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 36px;
+}
+
+.date-sep { margin: 0 10px; opacity: 0.5; }
+
+.divider {
+  font-size: 18px;
+  color: var(--accent);
+  margin: 36px 0;
+  letter-spacing: 0.5em;
+}
+
+.greeting {
+  font-size: 26px;
+  font-style: italic;
+  margin-bottom: 22px;
+}
+
+.body-text {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #4a4a4a;
+  margin-bottom: 14px;
+}
+
+.details {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  margin: 44px 0;
+  flex-wrap: wrap;
+}
+
+.detail { flex: 1; min-width: 180px; }
+
+.detail-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.detail-value {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.rsvp-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 16px 40px;
+  background: var(--text);
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.3s;
+}
+
+.rsvp-btn:hover { background: var(--accent); }
+
+@media (max-width: 480px) {
+  .names { font-size: 44px; }
+  .names .amp { font-size: 30px; }
+  .greeting { font-size: 21px; }
+  .body-text { font-size: 17px; }
+}
