@@ -178,3 +178,91 @@ body {
   .greeting { font-size: 21px; }
   .body-text { font-size: 17px; }
 }
+
+/* === Программа дня === */
+.schedule {
+  margin: 56px 0;
+  padding-top: 44px;
+  border-top: 1px solid rgba(138, 122, 99, 0.25);
+}
+
+.schedule-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 36px;
+  letter-spacing: 0.02em;
+}
+
+.schedule-list {
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.schedule-item {
+  display: flex;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(138, 122, 99, 0.15);
+}
+
+.schedule-item:last-child {
+  border-bottom: none;
+}
+
+.schedule-time {
+  flex-shrink: 0;
+  width: 68px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  padding-top: 3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.schedule-content {
+  flex: 1;
+}
+
+.schedule-event {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: 0.01em;
+}
+
+.schedule-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #5a5a5a;
+  font-style: italic;
+}
+
+/* Мобильная версия */
+@media (max-width: 480px) {
+  .schedule-item {
+    gap: 16px;
+    padding: 14px 0;
+  }
+  .schedule-time {
+    width: 56px;
+    font-size: 14px;
+  }
+  .schedule-event {
+    font-size: 19px;
+  }
+  .schedule-desc {
+    font-size: 15px;
+  }
+  .schedule-title {
+    font-size: 24px;
+  }
+}
