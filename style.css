@@ -120,6 +120,56 @@ body {
   transition: background 0.3s;
 }
 
+/* === Счётчик === */
+.countdown {
+  margin: 44px 0;
+  padding: 28px 16px;
+  border-top: 1px solid rgba(138, 122, 99, 0.25);
+  border-bottom: 1px solid rgba(138, 122, 99, 0.25);
+}
+
+.countdown-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.countdown-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown-num {
+  font-size: 44px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+  .countdown-num { font-size: 32px; }
+  .countdown-label { font-size: 9px; }
+}
 .rsvp-btn:hover { background: var(--accent); }
 
 @media (max-width: 480px) {

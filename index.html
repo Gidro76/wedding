@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Свадьба</title>
+  <title>Свадьба · 23.07.2027</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -16,17 +16,17 @@
     <p class="pre-title">Приглашение на свадьбу</p>
 
     <h1 class="names">
-      <span>ИМЯ_1</span>
+      <span>Дарья</span>
       <span class="amp">&</span>
-      <span>ИМЯ_2</span>
+      <span>Иван</span>
     </h1>
 
     <p class="date-line">
-      <span class="date-day">ДД</span>
+      <span class="date-day">23</span>
       <span class="date-sep">·</span>
-      <span class="date-month">МЕСЯЦ</span>
+      <span class="date-month">июля</span>
       <span class="date-sep">·</span>
-      <span class="date-year">ГГГГ</span>
+      <span class="date-year">2027</span>
     </p>
 
     <div class="divider">✦</div>
@@ -38,14 +38,33 @@
       важный и счастливый день нашей жизни.
     </p>
 
-    <p class="body-text">
-      Будем счастливы видеть вас на нашей свадьбе.
-    </p>
+    <!-- Счётчик -->
+    <section class="countdown" id="countdown">
+      <p class="countdown-title">До торжества осталось</p>
+      <div class="countdown-grid">
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-days">--</span>
+          <span class="countdown-label">дней</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-hours">--</span>
+          <span class="countdown-label">часов</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-min">--</span>
+          <span class="countdown-label">минут</span>
+        </div>
+        <div class="countdown-item">
+          <span class="countdown-num" id="cd-sec">--</span>
+          <span class="countdown-label">секунд</span>
+        </div>
+      </div>
+    </section>
 
     <div class="details">
       <div class="detail">
         <p class="detail-label">Когда</p>
-        <p class="detail-value">ДД месяца ГГГГ, ЧЧ:ММ</p>
+        <p class="detail-value">23 июля 2027, 15:00</p>
       </div>
       <div class="detail">
         <p class="detail-label">Где</p>
