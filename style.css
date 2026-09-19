@@ -266,3 +266,145 @@ body {
     font-size: 24px;
   }
 }
+
+
+/* === Анкета гостя === */
+.rsvp-section {
+  margin: 56px 0;
+  padding-top: 44px;
+  border-top: 1px solid rgba(138, 122, 99, 0.25);
+}
+
+.rsvp-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: #5a5a5a;
+  margin-bottom: 36px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Карточка одного человека */
+.guest-form-block {
+  max-width: 480px;
+  margin: 0 auto 40px;
+  padding: 28px 24px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(138, 122, 99, 0.2);
+  border-radius: 4px;
+}
+
+.guest-form-block:last-child {
+  margin-bottom: 0;
+}
+
+.form-person-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  text-align: center;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(138, 122, 99, 0.2);
+}
+
+.form-loading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* Поля формы */
+.rsvp-form {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 28px;
+}
+
+.form-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 12px;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+.radio-group, .checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-group label, .checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  color: #4a4a4a;
+  cursor: pointer;
+}
+
+.radio-group input, .checkbox-group input {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.rsvp-form textarea {
+  width: 100%;
+  padding: 12px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  border: 1px solid rgba(138, 122, 99, 0.3);
+  border-radius: 2px;
+  background: transparent;
+  resize: vertical;
+  color: var(--text);
+  box-sizing: border-box;
+}
+
+.rsvp-form textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.rsvp-form .rsvp-btn {
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.form-message {
+  margin-top: 16px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-style: italic;
+  text-align: center;
+  min-height: 22px;
+}
+
+.form-message.success { color: #2e7d32; }
+.form-message.error { color: #c62828; }
+
+.rsvp-form input:disabled,
+.rsvp-form textarea:disabled,
+.rsvp-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
