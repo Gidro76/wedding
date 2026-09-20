@@ -1,0 +1,21 @@
+вот моя Гугл таблица
+https://docs.google.com/spreadsheets/d/1elyJGXaDIUYW2e78Oi9Cqxng1J-8LG2fJkptIr3hmPQ/edit?gid=0#gid=0
+в app scripts совпадает
+const SHEET_ID = '1elyJGXaDIUYW2e78Oi9Cqxng1J-8LG2fJkptIr3hmPQ';
+const SHEET_NAME = 'Лист1'; // имя листа внизу таблицы
+
+function doPost(e) {
+  try {
+    const sheet = SpreadsheetApp.openById(SHEET_ID).getSheetByName(SHEET_NAME);
+    const data = JSON.parse(e.postData.contents);
+
+
+в scripts
+  const SCRIPT_URL = 'https://docs.google.com/spreadsheets/d/1elyJGXaDIUYW2e78Oi9Cqxng1J-8LG2fJkptIr3hmPQ/edit?gid=0#gid=0';
+
+при заполнении получаю
+ОТПРАВЛЕНО
+Спасибо! Ваш ответ отправлен 🎉
+
+
+таблица не заполнилась
