@@ -1,6 +1,4 @@
 // === Дата свадьбы ===
-// Формат: Год, Месяц(0-11!), День, Часы, Минуты
-// 23 июля 2027, 15:00  →  месяц ИЮЛЬ = 6 (январь=0)
 const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
 
 // === Приветствие по имени гостя ===
@@ -34,6 +32,7 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
   const mins  = document.getElementById('cd-min');
   const secs  = document.getElementById('cd-sec');
   const wrap  = document.getElementById('countdown');
+  if (!wrap) return;
 
   function pad(n) { return String(n).padStart(2, '0'); }
 
@@ -46,15 +45,10 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
       return;
     }
 
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-
-    days.textContent  = pad(d);
-    hours.textContent = pad(h);
-    mins.textContent  = pad(m);
-    secs.textContent  = pad(s);
+    days.textContent  = pad(Math.floor(diff / 86400000));
+    hours.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    mins.textContent  = pad(Math.floor((diff % 3600000) / 60000));
+    secs.textContent  = pad(Math.floor((diff % 60000) / 1000));
   }
 
   tick();
@@ -63,13 +57,10 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
 
 // === Анкета гостя ===
 (function () {
-  // ⚠️ ЗАМЕНИ на URL веб-приложения из Apps Script (шаг 5)
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzy8-QEVWyjPowcGi21S6N0sN52NxX1kjmsapEP8e310UQcYRLDbbPylTGQHcClBg-6eA/exec';
-
   const container = document.getElementById('forms-container');
-  if (!container) return; // на случай, если секции нет на странице
+  if (!container) return;
 
-  // Строим форму одного человека
   function buildForm(guestId, coupleName, personName, index) {
     const wrap = document.createElement('div');
     wrap.className = 'guest-form-block';
@@ -125,7 +116,6 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
     return wrap;
   }
 
-  // Обработка отправки
   function attachSubmitHandler(form, index) {
     const submitBtn = form.querySelector('.rsvp-btn');
     const messageEl = form.querySelector('.form-message');
@@ -150,14 +140,15 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
         attendance: formData.get(`attendance-${index}`),
         alcohol:    alcohol,
         hotDish:    hotDish,
-        allergies:  formData.get('allergies') || ''
+        allergies:  formData.get(`allergies-${index}`) || ''
       };
+
+      console.log('Отправляем:', data); // ← диагностика, потом уберём
 
       try {
         await fetch(SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data)
         });
 
@@ -170,11 +161,11 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
         messageEl.className = 'form-message error';
         submitBtn.disabled = false;
         submitBtn.textContent = 'Отправить';
+        console.error(err);
       }
     });
   }
 
-  // Загружаем данные и строим формы
   (async function init() {
     const params = new URLSearchParams(window.location.search);
     const id = params.get('id');
