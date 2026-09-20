@@ -12,15 +12,11 @@ body {
   color: var(--text);
   font-family: 'Cormorant Garamond', serif;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
 }
 
 .invitation {
   max-width: 560px;
-  width: 100%;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -540,5 +536,47 @@ body {
   .quote-author {
     font-size: 10px;
     letter-spacing: 0.28em;
+  }
+}
+
+/* === Плавный скролл блоками === */
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y proximity;
+}
+
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  scroll-snap-align: start;
+  opacity: 1;
+  transform: none;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Анимация появления — только если JS активен */
+.js .page {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.js .page.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Плавное затухание уходящего блока */
+.js .page:not(.visible) {
+  opacity: 0.15;
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 48px 16px;
   }
 }

@@ -195,3 +195,29 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
     }
   })();
 })();
+// === Появление блоков при скролле ===
+(function () {
+  const pages = document.querySelectorAll('.page');
+  if (!pages.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    pages.forEach(p => p.classList.add('visible'));
+    return;
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.15,
+    rootMargin: '0px 0px -10% 0px'
+  });
+
+  pages.forEach(p => obs.observe(p));
+
+  // Первую страницу показываем сразу
+  if (pages[0]) pages[0].classList.add('visible');
+})();

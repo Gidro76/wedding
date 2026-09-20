@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <script>document.documentElement.classList.add('js')</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
@@ -12,144 +14,147 @@
 
   <main class="invitation">
 
-    <h1 class="names">
-      <span>Иван</span><span class="amp">&</span><span>Дарья</span>
-    </h1>
+    <!-- Страница 1: имена + цитата -->
+    <section class="page">
+      <h1 class="names">
+        <span>Иван</span><span class="amp">&</span><span>Дарья</span>
+      </h1>
 
-    <div class="divider">✦</div>
+      <div class="divider">✦</div>
 
-    <blockquote class="quote">
-      <p class="quote-text">«Любовь сильнее всего, святее всего, несказаннее всего»</p>
-      <cite class="quote-author">Николай Карамзин</cite>
-    </blockquote>
-
-    
-    <div class="divider">✦</div>
-
-
-    <p class="greeting" id="greeting">Дорогие гости!</p>
-
-
-    <p class="body-text">
-      С радостью приглашаем вас разделить с нами самый
-      важный и счастливый день нашей жизни.
-    </p>
-
-    <!-- Счётчик -->
-    <section class="countdown" id="countdown">
-      <p class="countdown-title">До торжества осталось</p>
-      <div class="countdown-grid">
-        <div class="countdown-item">
-          <span class="countdown-num" id="cd-days">--</span>
-          <span class="countdown-label">дней</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-num" id="cd-hours">--</span>
-          <span class="countdown-label">часов</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-num" id="cd-min">--</span>
-          <span class="countdown-label">минут</span>
-        </div>
-        <div class="countdown-item">
-          <span class="countdown-num" id="cd-sec">--</span>
-          <span class="countdown-label">секунд</span>
-        </div>
-      </div>
+      <blockquote class="quote">
+        <p class="quote-text">«Любовь сильнее всего, святее всего, несказаннее всего»</p>
+        <cite class="quote-author">Николай Карамзин</cite>
+      </blockquote>
     </section>
 
-    <!-- Когда — календарь -->
-    <section class="calendar-section">
-      <p class="detail-label">Когда</p>
-      <h3 class="calendar-month">Июль 2027</h3>
-      <div class="calendar-grid">
-        <span class="header">Пн</span>
-        <span class="header">Вт</span>
-        <span class="header">Ср</span>
-        <span class="header">Чт</span>
-        <span class="header">Пт</span>
-        <span class="header">Сб</span>
-        <span class="header">Вс</span>
+    <!-- Страница 2: приветствие + счётчик -->
+    <section class="page">
+      <p class="greeting" id="greeting">Дорогие гости!</p>
 
-        <span></span><span></span><span></span>
-        <span>1</span><span>2</span><span>3</span><span>4</span>
+      <p class="body-text">
+        С радостью приглашаем вас разделить с нами самый
+        важный и счастливый день нашей жизни.
+      </p>
 
-        <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
-        <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
-        <span>19</span><span>20</span><span>21</span><span>22</span>
-        <span class="day-wedding">23</span>
-        <span>24</span><span>25</span>
-
-        <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span></span>
-      </div>
-      <p class="calendar-time">Начало в 15:00</p>
+      <section class="countdown" id="countdown">
+        <p class="countdown-title">До торжества осталось</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="countdown-num" id="cd-days">--</span>
+            <span class="countdown-label">дней</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-num" id="cd-hours">--</span>
+            <span class="countdown-label">часов</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-num" id="cd-min">--</span>
+            <span class="countdown-label">минут</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-num" id="cd-sec">--</span>
+            <span class="countdown-label">секунд</span>
+          </div>
+        </div>
+      </section>
     </section>
 
-<!-- Где -->
-<section class="place-section">
-  <p class="detail-label">Где</p>
-  <p class="detail-value">
-    <a href="https://yandex.ru/maps/org/pribrezhny_yarburg/101988572080/?ll=39.789713%2C57.449477&z=15.05"
-       target="_blank"
-       rel="noopener"
-       class="place-link">
-      Прибрежный Ярбург
-    </a>
-  </p>
-</section>
-    
-  <!-- Программа дня -->
-<section class="schedule">
-  <h2 class="schedule-title">Программа дня</h2>
+    <!-- Страница 3: календарь + место -->
+    <section class="page">
+      <section class="calendar-section">
+        <p class="detail-label">Когда</p>
+        <h3 class="calendar-month">Июль 2027</h3>
+        <div class="calendar-grid">
+          <span class="header">Пн</span>
+          <span class="header">Вт</span>
+          <span class="header">Ср</span>
+          <span class="header">Чт</span>
+          <span class="header">Пт</span>
+          <span class="header">Сб</span>
+          <span class="header">Вс</span>
 
-  <div class="schedule-list">
+          <span></span><span></span><span></span>
+          <span>1</span><span>2</span><span>3</span><span>4</span>
 
-    <div class="schedule-item">
-      <div class="schedule-time">15:30</div>
-      <div class="schedule-content">
-        <h3 class="schedule-event">Welcome зона</h3>
-        <p class="schedule-desc">Встреча гостей, приветственные напитки.</p>
-      </div>
-    </div>
+          <span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span>
+          <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+          <span>19</span><span>20</span><span>21</span><span>22</span>
+          <span class="day-wedding">23</span>
+          <span>24</span><span>25</span>
 
-    <div class="schedule-item">
-      <div class="schedule-time">16:00</div>
-      <div class="schedule-content">
-        <h3 class="schedule-event">Регистрация</h3>
-        <p class="schedule-desc">Торжественная церемония бракосочетания.</p>
-      </div>
-    </div>
+          <span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span></span>
+        </div>
+        <p class="calendar-time">Начало в 15:00</p>
+      </section>
 
-    <div class="schedule-item">
-      <div class="schedule-time">16:30</div>
-      <div class="schedule-content">
-        <h3 class="schedule-event">Банкет</h3>
-        <p class="schedule-desc">Праздничный ужин, поздравления и танцы.</p>
-      </div>
-    </div>
+      <section class="place-section">
+        <p class="detail-label">Где</p>
+        <p class="detail-value">
+          <a href="https://yandex.ru/maps/org/pribrezhny_yarburg/101988572080/?ll=39.789713%2C57.449477&z=15.05"
+             target="_blank"
+             rel="noopener"
+             class="place-link">
+            Прибрежный Ярбург
+          </a>
+        </p>
+      </section>
+    </section>
 
-    <div class="schedule-item">
-      <div class="schedule-time">23:00</div>
-      <div class="schedule-content">
-        <h3 class="schedule-event">Конец вечера</h3>
-        <p class="schedule-desc">Завершение праздника.</p>
-      </div>
-    </div>
+    <!-- Страница 4: программа дня -->
+    <section class="page">
+      <section class="schedule">
+        <h2 class="schedule-title">Программа дня</h2>
 
-  </div>
-</section>  
+        <div class="schedule-list">
+          <div class="schedule-item">
+            <div class="schedule-time">15:30</div>
+            <div class="schedule-content">
+              <h3 class="schedule-event">Welcome зона</h3>
+              <p class="schedule-desc">Встреча гостей, приветственные напитки.</p>
+            </div>
+          </div>
 
-<!-- Анкета гостя -->
-<section class="rsvp-section" id="rsvp">
-  <h2 class="schedule-title">Анкета гостя</h2>
-  <p class="rsvp-subtitle">
-    Пожалуйста, заполните небольшую анкету, чтобы мы могли позаботиться о вашем комфорте.
-  </p>
+          <div class="schedule-item">
+            <div class="schedule-time">16:00</div>
+            <div class="schedule-content">
+              <h3 class="schedule-event">Регистрация</h3>
+              <p class="schedule-desc">Торжественная церемония бракосочетания.</p>
+            </div>
+          </div>
 
-  <div id="forms-container">
-    <p class="form-loading">Загрузка анкеты…</p>
-  </div>
-</section>
+          <div class="schedule-item">
+            <div class="schedule-time">16:30</div>
+            <div class="schedule-content">
+              <h3 class="schedule-event">Банкет</h3>
+              <p class="schedule-desc">Праздничный ужин, поздравления и танцы.</p>
+            </div>
+          </div>
+
+          <div class="schedule-item">
+            <div class="schedule-time">23:00</div>
+            <div class="schedule-content">
+              <h3 class="schedule-event">Конец вечера</h3>
+              <p class="schedule-desc">Завершение праздника.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Страница 5: анкета -->
+    <section class="page">
+      <section class="rsvp-section" id="rsvp">
+        <h2 class="schedule-title">Анкета гостя</h2>
+        <p class="rsvp-subtitle">
+          Пожалуйста, заполните небольшую анкету, чтобы мы могли позаботиться о вашем комфорте.
+        </p>
+
+        <div id="forms-container">
+          <p class="form-loading">Загрузка анкеты…</p>
+        </div>
+      </section>
+    </section>
 
   </main>
 
