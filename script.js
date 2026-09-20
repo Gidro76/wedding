@@ -147,7 +147,7 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
         guestId:    formData.get('guestId'),
         coupleName: formData.get('coupleName'),
         guestName:  formData.get('personName'),
-        attendance: formData.get('attendance'),
+        attendance: formData.get(`attendance-${index}`),
         alcohol:    alcohol,
         hotDish:    hotDish,
         allergies:  formData.get('allergies') || ''
