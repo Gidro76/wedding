@@ -64,7 +64,7 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
 // === Анкета гостя ===
 (function () {
   // ⚠️ ЗАМЕНИ на URL веб-приложения из Apps Script (шаг 5)
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzXJiULSMBfWoe9XcGvLiCRAh1TgfM03d-tzgRkgRkRJ0tT6NX2nJDlHXC80ParlCzwlQ/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwhNcOfS4AidepNhw3HmMn46g8fV6KAPBfiAdUlcXE8lqiF2xLnmOCLV6hd2tVtd_UKxQ/exec';
 
   const container = document.getElementById('forms-container');
   if (!container) return; // на случай, если секции нет на странице
