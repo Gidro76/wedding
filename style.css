@@ -47,7 +47,8 @@ body {
   font-style: italic;
   font-size: 42px;
   color: var(--accent);
-  margin: 8px 0;
+  margin: 0 12px;
+  vertical-align: middle;
 }
 
 .date-line {
