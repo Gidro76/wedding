@@ -57,7 +57,7 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
 
 // === Анкета гостя ===
 (function () {
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfw1-89YRu3SRXuHv-rrndrSHF1eD_kUTS2o-0rCu97NkFWlRv-0ZPRLiESeoJ-fbWKA/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyKBY413QUzcTODSluWgNj0UJEuRgPOF2_trIioy2mWNwc699gcMpfoc5bpzPnV96bueg/exec';
   const container = document.getElementById('forms-container');
   if (!container) return;
 
