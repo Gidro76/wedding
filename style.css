@@ -502,3 +502,43 @@ body {
     font-size: 22px;
   }
 }
+
+
+
+/* === Цитата === */
+.quote {
+  margin: 36px auto 44px;
+  max-width: 480px;
+  padding: 0 16px;
+}
+
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text);
+  margin-bottom: 18px;
+  letter-spacing: 0.01em;
+}
+
+.quote-author {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .quote-text {
+    font-size: 23px;
+  }
+  .quote-author {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+  }
+}
