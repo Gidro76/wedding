@@ -407,3 +407,89 @@ body {
   opacity: 0.6;
   cursor: default;
 }
+
+/* === Календарь === */
+.calendar-section {
+  margin: 48px auto;
+  max-width: 340px;
+  text-align: center;
+}
+
+.calendar-section .detail-label {
+  margin-bottom: 14px;
+}
+
+.calendar-month {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 22px;
+  letter-spacing: 0.02em;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.calendar-grid .header {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding-bottom: 10px;
+}
+
+.calendar-grid > span:not(.header) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  margin: 0 auto;
+  color: #4a4a4a;
+  font-variant-numeric: tabular-nums;
+}
+
+.day-wedding {
+  background: var(--accent);
+  color: #fff !important;
+  border-radius: 50%;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(138, 122, 99, 0.35);
+}
+
+.calendar-time {
+  margin-top: 24px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* === Где === */
+.place-section {
+  margin: 48px auto;
+  text-align: center;
+}
+
+.place-section .detail-label {
+  margin-bottom: 14px;
+}
+
+@media (max-width: 480px) {
+  .calendar-grid > span:not(.header) {
+    width: 30px;
+    height: 30px;
+  }
+  .calendar-month {
+    font-size: 22px;
+  }
+}
