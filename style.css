@@ -539,10 +539,8 @@ body {
   }
 }
 
-/* === Плавный скролл блоками === */
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y proximity;
 }
 
 .page {
@@ -550,10 +548,9 @@ html {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: safe center;
   align-items: center;
   padding: 60px 20px;
-  scroll-snap-align: start;
   opacity: 1;
   transform: none;
   transition: opacity 1s ease, transform 1s ease;
@@ -578,5 +575,12 @@ html {
 @media (max-width: 480px) {
   .page {
     padding: 48px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    min-height: auto;
+    padding: 64px 20px;
   }
 }
