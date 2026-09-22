@@ -549,7 +549,6 @@ html {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: safe center;
   align-items: center;
   opacity: 1;
   transform: none;
@@ -560,6 +559,15 @@ html {
   .page {
     min-height: 100svh;
   }
+}
+
+/* Центрирование через auto-margin — работает во всех браузерах */
+.page > :first-child {
+  margin-top: auto;
+}
+
+.page > :last-child {
+  margin-bottom: auto;
 }
 
 /* Анимация появления — только если JS активен */
