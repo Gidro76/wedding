@@ -547,14 +547,18 @@ html {
   min-height: 100vh;
   padding: 60px 20px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
+  align-items: center;
   opacity: 1;
   transform: none;
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-@supports (min-height: 100dvh) {
+@supports (min-height: 100svh) {
   .page {
-    min-height: 100dvh;
+    min-height: 100svh;
   }
 }
 
