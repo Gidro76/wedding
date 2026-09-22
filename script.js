@@ -88,6 +88,7 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
             <label><input type="checkbox" name="alcohol-${index}" value="Виски"> Виски</label>
             <label><input type="checkbox" name="alcohol-${index}" value="Водка"> Водка</label>
             <label><input type="checkbox" name="alcohol-${index}" value="Коньяк"> Коньяк</label>
+            <label><input type="checkbox" name="alcohol-${index}" value="Самогон от М.Н.Озерова"> Самогон от М.Н.Озерова</label>
             <label><input type="checkbox" name="alcohol-${index}" value="Безалкогольные напитки"> Безалкогольные напитки</label>
           </div>
         </div>
