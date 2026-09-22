@@ -241,6 +241,30 @@ body {
   font-style: italic;
 }
 
+/* === Дресс-код === */
+.dresscode {
+  margin: 56px 0;
+  padding-top: 44px;
+  border-top: 1px solid rgba(138, 122, 99, 0.25);
+  text-align: center;
+}
+
+.dresscode-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 21px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #4a4a4a;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .dresscode-text {
+    font-size: 18px;
+  }
+}
+
 /* Мобильная версия */
 @media (max-width: 480px) {
   .schedule-item {
