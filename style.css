@@ -466,9 +466,20 @@ body {
   background-position: center;
   background-size: 42px 42px;
   box-shadow: none;
-  padding-bottom: 6px;
+  padding-bottom: 0;
 }
 
+.calendar-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+}
 
 .calendar-time {
   margin-top: 24px;
