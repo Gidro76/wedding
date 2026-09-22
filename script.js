@@ -221,3 +221,36 @@ const WEDDING_DATE = new Date(2027, 6, 23, 15, 0, 0);
   // Первую страницу показываем сразу
   if (pages[0]) pages[0].classList.add('visible');
 })();
+
+// === Универсальная ссылка для добавления в календарь ===
+(function () {
+  const calendarLinks = document.querySelectorAll('.calendar-link');
+
+  calendarLinks.forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault();
+
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const icsUrl = 'https://gidro76.github.io/wedding/wedding.ics'; // Ваша прямая ссылка
+
+      // Для iPhone, iPad, Mac — используем webcal://
+      if (/iPad|iPhone|iPod|Macintosh/.test(userAgent)) {
+        window.location.href = 'webcal://' + icsUrl.replace(/^https?:\/\//, '');
+      }
+      // Для Android — предлагаем добавить в Google Календарь
+      else if (/android/i.test(userAgent)) {
+        const googleCalendarUrl = 'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+                                  '&text=' + encodeURIComponent('Свадьба Ивана и Дарьи') +
+                                  '&dates=20270723T120000Z/20270723T210000Z' +
+                                  '&location=' + encodeURIComponent('Прибрежный Ярбург') +
+                                  '&details=' + encodeURIComponent('Торжественная церемония бракосочетания');
+        window.open(googleCalendarUrl, '_blank');
+      }
+      // Для всех остальных (компьютер) — скачиваем .ics файл
+      else {
+        // Просто переходим по ссылке, чтобы начать скачивание
+        window.location.href = icsUrl;
+      }
+    });
+  });
+})();
