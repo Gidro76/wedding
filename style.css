@@ -544,10 +544,18 @@ html {
 }
 
 .page {
+  min-height: 100vh;
   padding: 60px 20px;
+  box-sizing: border-box;
   opacity: 1;
   transform: none;
   transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+@supports (min-height: 100dvh) {
+  .page {
+    min-height: 100dvh;
+  }
 }
 
 /* Анимация появления — только если JS активен */
@@ -561,8 +569,8 @@ html {
   transform: translateY(0);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .page {
-    padding: 48px 16px;
+    padding: 70px 20px 50px;
   }
 }
