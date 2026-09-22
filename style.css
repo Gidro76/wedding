@@ -544,22 +544,10 @@ html {
 }
 
 .page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: safe center;
-  align-items: center;
-  padding: 80px 20px;
-  box-sizing: border-box;
+  padding: 60px 20px;
   opacity: 1;
   transform: none;
   transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-@supports (min-height: 100dvh) {
-  .page {
-    min-height: 100dvh;
-  }
 }
 
 /* Анимация появления — только если JS активен */
@@ -571,11 +559,6 @@ html {
 .js .page.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Плавное затухание уходящего блока */
-.js .page:not(.visible) {
-  opacity: 0.15;
 }
 
 @media (max-width: 480px) {
