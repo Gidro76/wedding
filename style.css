@@ -268,11 +268,12 @@ body {
 }
 
 /* Палитра дресс-кода */
+/* Палитра дресс-кода */
 .dresscode-palette {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 22px 26px;
+  gap: 24px 28px;
   margin-top: 36px;
   padding: 0 12px;
 }
@@ -281,59 +282,104 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
+/* Основа кружка */
 .swatch {
-  display: block;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
   position: relative;
+  display: block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
   background:
-    /* верхний блик — имитация шёлкового блеска */
     radial-gradient(
-      circle at 32% 28%,
-      rgba(255, 255, 255, 0.85) 0%,
-      rgba(255, 255, 255, 0.35) 18%,
-      rgba(255, 255, 255, 0) 42%
-    ),
-    /* второй мягкий блик — «складка» */
-    radial-gradient(
-      circle at 68% 72%,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0) 55%
-    ),
-    /* основной объёмный цвет */
-    radial-gradient(
-      circle at 38% 35%,
+      circle at 42% 38%,
       var(--c1) 0%,
-      var(--c2) 45%,
+      var(--c2) 55%,
       var(--c3) 100%
     );
   box-shadow:
-    /* мягкая внешняя тень — «отрыв» от фона */
-    0 6px 14px rgba(43, 43, 43, 0.12),
-    0 2px 4px rgba(43, 43, 43, 0.06),
-    /* внутренний мягкий отблеск */
-    inset 0 -2px 6px rgba(0, 0, 0, 0.08),
-    inset 0 2px 4px rgba(255, 255, 255, 0.4);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+    0 8px 18px rgba(43, 43, 43, 0.14),
+    0 2px 6px rgba(43, 43, 43, 0.08),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.12),
+    inset 0 3px 5px rgba(255, 255, 255, 0.4);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
+/* Слой 1 — блики и объём (имитация складок шёлка) */
+.swatch::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    /* главный блик — «изгиб» ткани сверху-слева */
+    radial-gradient(
+      ellipse 70% 45% at 30% 22%,
+      rgba(255, 255, 255, 0.9) 0%,
+      rgba(255, 255, 255, 0.4) 30%,
+      rgba(255, 255, 255, 0) 65%
+    ),
+    /* второй мягкий отблеск — нижняя «складка» */
+    radial-gradient(
+      ellipse 55% 35% at 68% 84%,
+      rgba(255, 255, 255, 0.35) 0%,
+      rgba(255, 255, 255, 0) 70%
+    ),
+    /* тёмная тень — «провал» справа */
+    radial-gradient(
+      ellipse 40% 60% at 92% 55%,
+      rgba(0, 0, 0, 0.15) 0%,
+      rgba(0, 0, 0, 0) 75%
+    );
+  pointer-events: none;
+}
+
+/* Слой 2 — тканевое зерно + диагональные волокна */
+.swatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-image:
+    /* мелкий «шум» — зерно ткани */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='silk'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' seed='5'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.55 0'/></filter><rect width='120' height='120' filter='url(%23silk)'/></svg>"),
+    /* тонкие диагональные волокна — направление «плетения» */
+    repeating-linear-gradient(
+      115deg,
+      transparent 0px,
+      transparent 4px,
+      rgba(255, 255, 255, 0.07) 4px,
+      rgba(255, 255, 255, 0.07) 5px,
+      transparent 5px,
+      transparent 9px,
+      rgba(0, 0, 0, 0.05) 9px,
+      rgba(0, 0, 0, 0.05) 10px,
+      transparent 10px,
+      transparent 14px
+    );
+  background-size: 120px 120px, auto;
+  mix-blend-mode: overlay;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Ховер — кружок чуть приподнимается */
 .swatch:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 10px 20px rgba(43, 43, 43, 0.15),
-    0 3px 6px rgba(43, 43, 43, 0.08),
-    inset 0 -2px 6px rgba(0, 0, 0, 0.08),
-    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    0 14px 24px rgba(43, 43, 43, 0.18),
+    0 4px 8px rgba(43, 43, 43, 0.1),
+    inset 0 -3px 8px rgba(0, 0, 0, 0.12),
+    inset 0 3px 5px rgba(255, 255, 255, 0.5);
 }
 
 .swatch-label {
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted);
 }
@@ -343,11 +389,12 @@ body {
     gap: 18px 20px;
   }
   .swatch {
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
   }
   .swatch-label {
     font-size: 8px;
+    letter-spacing: 0.18em;
   }
 }
 
