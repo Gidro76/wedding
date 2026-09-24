@@ -244,11 +244,11 @@ body {
 /* Палитра дресс-кода */
 .dresscode-palette {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 18px 14px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px 20px;
   margin-top: 36px;
-  padding: 0 8px;
-  max-width: 520px;
+  padding: 0 12px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -263,11 +263,11 @@ body {
 .swatch {
   position: relative;
   display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 48px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   overflow: hidden;
+  margin: 0 auto;
 
   background:
     radial-gradient(
@@ -328,8 +328,8 @@ body {
 
 .swatch-label {
   font-family: 'Montserrat', sans-serif;
-  font-size: 7px;
-  letter-spacing: 0.12em;
+  font-size: 8px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--muted);
   text-align: center;
@@ -337,17 +337,18 @@ body {
   min-height: 18px;
 }
 
-/* Планшет / узкий экран — 4 в ряд */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
   .dresscode-palette {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px 12px;
+    gap: 18px 14px;
+    max-width: 340px;
   }
   .swatch {
-    max-width: 54px;
+    width: 48px;
+    height: 48px;
   }
   .swatch-label {
-    font-size: 8px;
+    font-size: 7px;
+    letter-spacing: 0.1em;
   }
 }
 
