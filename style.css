@@ -820,6 +820,7 @@ html {
 }
 
 /* Первая страница с фото на фоне */
+/* Первая страница — картинка по краям, центр — фон */
 .page-hero {
   position: relative;
   background-image: url('hero.jpg');
@@ -828,17 +829,19 @@ html {
   background-repeat: no-repeat;
 }
 
-/* Вуаль — картинка видна, но приглушена */
+/* Радиальная вуаль: центр — плотный фон, края — прозрачные */
 .page-hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(247, 243, 238, 0.55) 0%,
-    rgba(247, 243, 238, 0.35) 40%,
-    rgba(247, 243, 238, 0.35) 60%,
-    rgba(247, 243, 238, 0.55) 100%
+  background: radial-gradient(
+    ellipse 60% 55% at center,
+    var(--bg) 0%,
+    var(--bg) 25%,
+    rgba(247, 243, 238, 0.95) 40%,
+    rgba(247, 243, 238, 0.7) 60%,
+    rgba(247, 243, 238, 0.25) 82%,
+    transparent 100%
   );
   pointer-events: none;
   z-index: 0;
@@ -849,21 +852,23 @@ html {
   z-index: 1;
 }
 
-/* Текст на фото — чуть плотнее */
 .page-hero .names {
-  text-shadow: 0 2px 24px rgba(247, 243, 238, 0.8);
+  text-shadow: 0 2px 20px rgba(247, 243, 238, 0.9);
 }
 
+/* На телефоне — овальная вуаль поменьше */
 @media (max-width: 768px) {
   .page-hero {
-    background-position: center 30%;
+    background-position: center 40%;
   }
   .page-hero::before {
-    background: linear-gradient(
-      180deg,
-      rgba(247, 243, 238, 0.65) 0%,
-      rgba(247, 243, 238, 0.45) 50%,
-      rgba(247, 243, 238, 0.65) 100%
+    background: radial-gradient(
+      ellipse 70% 50% at center,
+      var(--bg) 0%,
+      var(--bg) 20%,
+      rgba(247, 243, 238, 0.9) 38%,
+      rgba(247, 243, 238, 0.55) 62%,
+      transparent 100%
     );
   }
 }
