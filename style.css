@@ -887,3 +887,17 @@ html {
 .page-hero .quote {
   margin: 18px auto 0;
 }
+
+/* Первая страница — центрирование поверх фона */
+.page-hero {
+  justify-content: center;
+}
+
+/* Отключаем авто-маржины для героя — они конфликтуют с ::before */
+.page-hero > :first-child {
+  margin-top: 0;
+}
+
+.page-hero > :last-child {
+  margin-bottom: 0;
+}
