@@ -14,6 +14,10 @@ body {
   min-height: 100vh;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .invitation {
   max-width: 560px;
   margin: 0 auto;
@@ -820,13 +824,19 @@ html {
 }
 
 /* Первая страница с фото на фоне */
-/* Первая страница — картинка по краям, центр — фон */
 .page-hero {
   position: relative;
   background-image: url('hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  /* Пробиваем секцию на всю ширину экрана */
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  box-sizing: border-box;
 }
 
 /* Радиальная вуаль: центр — плотный фон, края — прозрачные */
