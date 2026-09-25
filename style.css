@@ -835,17 +835,18 @@ html {
   position: absolute;
   inset: 0;
   background: radial-gradient(
-    ellipse 60% 55% at center,
+    ellipse 90% 85% at center,
     var(--bg) 0%,
-    var(--bg) 25%,
-    rgba(247, 243, 238, 0.95) 40%,
-    rgba(247, 243, 238, 0.7) 60%,
-    rgba(247, 243, 238, 0.25) 82%,
+    var(--bg) 50%,
+    rgba(247, 243, 238, 0.92) 68%,
+    rgba(247, 243, 238, 0.55) 84%,
+    rgba(247, 243, 238, 0.15) 95%,
     transparent 100%
   );
   pointer-events: none;
   z-index: 0;
 }
+
 
 .page-hero > * {
   position: relative;
@@ -863,11 +864,11 @@ html {
   }
   .page-hero::before {
     background: radial-gradient(
-      ellipse 70% 50% at center,
+      ellipse 110% 70% at center,
       var(--bg) 0%,
-      var(--bg) 20%,
-      rgba(247, 243, 238, 0.9) 38%,
-      rgba(247, 243, 238, 0.55) 62%,
+      var(--bg) 45%,
+      rgba(247, 243, 238, 0.85) 65%,
+      rgba(247, 243, 238, 0.45) 85%,
       transparent 100%
     );
   }
