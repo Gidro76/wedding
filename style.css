@@ -818,3 +818,52 @@ html {
     height: 16px;
   }
 }
+
+/* Первая страница с фото на фоне */
+.page-hero {
+  position: relative;
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Вуаль — картинка видна, но приглушена */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(247, 243, 238, 0.55) 0%,
+    rgba(247, 243, 238, 0.35) 40%,
+    rgba(247, 243, 238, 0.35) 60%,
+    rgba(247, 243, 238, 0.55) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Текст на фото — чуть плотнее */
+.page-hero .names {
+  text-shadow: 0 2px 24px rgba(247, 243, 238, 0.8);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    background-position: center 30%;
+  }
+  .page-hero::before {
+    background: linear-gradient(
+      180deg,
+      rgba(247, 243, 238, 0.65) 0%,
+      rgba(247, 243, 238, 0.45) 50%,
+      rgba(247, 243, 238, 0.65) 100%
+    );
+  }
+}
